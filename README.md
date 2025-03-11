@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+# JavaScript Calculator  
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a JavaScript Calculator built with React, following FreeCodeCamp's project requirements.  
 
-## Available Scripts
+## Project Requirements  
 
-In the project directory, you can run:
+**User Story #1**: The calculator should contain a clickable element for the `=` (equal sign) with an `id="equals"`.  
 
-### `npm start`
+**User Story #2**: The calculator should contain 10 clickable elements for numbers 0–9 with the following `id`s: `id="zero"`, `id="one"`, `id="two"`, `id="three"`, `id="four"`, `id="five"`, `id="six"`, `id="seven"`, `id="eight"`, and `id="nine"`.  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**User Story #3**: The calculator should contain 4 clickable elements for the primary operators (+, -, *, /) with the following `id`s: `id="add"`, `id="subtract"`, `id="multiply"`, and `id="divide"`.  
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**User Story #4**: The calculator should contain a clickable element for the decimal point (`.`) with an `id="decimal"`.  
 
-### `npm test`
+**User Story #5**: The calculator should contain a clickable element to clear the input with an `id="clear"`.  
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**User Story #6**: The calculator should display values in an element with an `id="display"`.  
 
-### `npm run build`
+**User Story #7**: Pressing the clear button should reset the calculator to its initial state, showing `0` in the element with an `id="display"`.  
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**User Story #8**: As numbers are inputted, they should appear in the element with an `id="display"`.  
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**User Story #9**: The calculator should support chained operations of any length, and pressing `=` should show the correct result in the element with an `id="display"`.  
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**User Story #10**: Numbers should not begin with multiple zeros.  
 
-### `npm run eject`
+**User Story #11**: When the decimal point is clicked, it should append to the current value; multiple decimal points in one number should be ignored.  
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+**User Story #12**: The calculator should handle decimal point operations (+, -, *, /) correctly.  
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**User Story #13**: If two or more operators are entered consecutively, the last operator should be used (except for the negative sign). For example:  
+- `5 + * 7 =` → Result: `35` (i.e., `5 * 7`)  
+- `5 * - 5 =` → Result: `-25` (i.e., `5 * (-5)`)  
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+**User Story #14**: Pressing an operator after `=` should start a new calculation using the result of the previous evaluation.  
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+**User Story #15**: The calculator should handle rounding with reasonable precision (at least 4 decimal places for operations like `2 / 7`).  
 
-## Learn More
+### Calculator Logic  
+There are two main calculator input logics: **immediate execution logic** and **formula logic**. This project follows **formula logic** (observing operator precedence). Either logic is acceptable as long as calculations are consistent with other production calculators.  
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Example:** `3 + 5 * 6 - 2 / 4 =`  
+- **Immediate Execution Logic:** `11.5`  
+- **Formula/Expression Logic:** `32.5`  
